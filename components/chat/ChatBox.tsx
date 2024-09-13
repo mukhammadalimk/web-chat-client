@@ -2,6 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import MessageItem from "./MessageItem";
 import axios from "axios";
+import { useTranslation } from "react-i18next";
 
 interface MessagesProps {
   text: string;
@@ -11,6 +12,7 @@ interface MessagesProps {
 const ChatBox = () => {
   const [messages, setMessages] = useState<MessagesProps[] | []>([]);
   const messageRef = useRef<HTMLInputElement>(null);
+  const { t } = useTranslation("common");
 
   // Scroll to the bottom of the messages box when new message is created
   useEffect(() => {
@@ -64,7 +66,7 @@ const ChatBox = () => {
         <div className="w-full join">
           <input
             type="text"
-            placeholder="Enter your message..."
+            placeholder={t("inputPlaceholder")}
             className="input input-bordered join-item flex-grow"
             ref={messageRef}
           />
@@ -72,7 +74,7 @@ const ChatBox = () => {
             className="btn btn-primary join-item"
             onClick={sendMessageHandler}
           >
-            Send
+            {t("sendButtonText")}
           </button>
         </div>
       </div>

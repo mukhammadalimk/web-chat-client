@@ -1,5 +1,6 @@
 import ChatBox from "@/components/chat/ChatBox";
 import Header from "@/components/Header";
+import "../i18next-config";
 
 export default function Home() {
   return (
