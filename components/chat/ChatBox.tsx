@@ -39,7 +39,7 @@ const ChatBox = () => {
     try {
       // Send request to backend
       const { data } = await axios.post(
-        `https://web-chat-server-8hk1.onrender.com/chat`,
+        `https://web-chat-server-ra6s.onrender.com/chat`,
         { message: messageText },
         { withCredentials: true }
       );
